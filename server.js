@@ -1,4 +1,4 @@
-require('dotenv').config;//פונקציה לטעינת הגדרות מקובץ איאנבי
+require('dotenv').config();//פונקציה לטעינת הגדרות מקובץ איאנבי
 const http=require('http');
 //const port=5000;
 const port=process.env.PORT || 5050;
