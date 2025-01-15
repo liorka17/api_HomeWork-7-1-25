@@ -4,6 +4,7 @@ const app = express();
 const productRouter = require('./API/V1/routes/product');
 const catRouter = require('./API/V1/routes/categories');
 const ordrouter = require('./API/V1/routes/orders');
+const userrouter =require('./API/V1/routes/users')
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const secure = require('./API/V1/middlewares/secure');
@@ -22,7 +23,7 @@ app.use(secure);
 app.use('/product', productRouter);
 app.use('/categories', catRouter);
 app.use('/orders', ordrouter);
-
+app.use('/users',userrouter);
 app.all('*', (req, res) => {
     return res.status(404).json({ msg: 'Not Found 404' });
 });
